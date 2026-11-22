@@ -1,0 +1,20 @@
+name: Create signing key (run ONCE)
+on:
+  workflow_dispatch:
+jobs:
+  key:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate keystore
+        run: |
+          PASS=$(openssl rand -hex 16)
+          keytool -genkeypair -v -keystore release.jks -storetype PKCS12 -alias checklink -keyalg RSA -keysize 2048 -validity 10000 -storepass "$PASS" -keypass "$PASS" -dname "CN=CheckLink, O=CheckLink, C=EG"
+          base64 -w0 release.jks > release.jks.b64
+          printf 'KEYSTORE_B64 = contents of release.jks.b64\nKEYSTORE_PASSWORD = %s\nKEY_PASSWORD = %s\nKEY_ALIAS = checklink\n' "$PASS" "$PASS" > secrets.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SIGNING-KEY-KEEP-SAFE
+          path: |
+            release.jks
+            release.jks.b64
+            secrets.txt

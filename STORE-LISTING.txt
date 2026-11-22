@@ -1,0 +1,12 @@
+Title: CheckLink – Scan Links & Scams
+Short description (80): Check links, files and suspicious messages before you tap. Scam & phishing detector.
+Full description:
+CheckLink tells you if a link, file or message is safe – before you open it.
+• Link scanner with VirusTotal and a smart local engine
+• Message Radar: detects fake bank employees asking for money or codes
+• Pick a message from WhatsApp, Messenger, Instagram, Telegram or email notifications (with your permission) and analyze it
+• Reads the result aloud and explains why in simple words
+• Smart voice assistant, password check, phishing quiz
+• 8 languages: Arabic, English, German, Italian, Spanish, French, Chinese, Hindi
+Your messages stay on your device.
+Category: Tools / Communication-safe: Tools
